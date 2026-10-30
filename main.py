@@ -4,9 +4,14 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import Annotated,Literal
 from fastapi.middleware.cors import CORSMiddleware
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
 
-model = joblib.load(r'C:\Users\jbash\Desktop\Deploye Self Did\Credit Card Fraud Detection\credit_card_fraud_detection.pkl')
+model_path = BASE_DIR / "credit_card_fraud_detection.pkl"
+
+model = joblib.load(model_path)
+
 
 app = FastAPI()
 
