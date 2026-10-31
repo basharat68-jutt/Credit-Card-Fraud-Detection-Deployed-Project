@@ -70,9 +70,9 @@ if st.button("Predict Fraud or Not"):
                 prediction = result["is_fraud"]
 
                 if prediction == 1:
-                    st.error("Prediction: Fraudulent Transaction")
+                    st.error("Prediction: Yes, it's Fraud")
                 elif prediction == 0:
-                    st.success("Prediction: Legitimate Transaction")
+                    st.success("Prediction: No, it's Not Fraud")
                 else:
                     st.warning(f"Unexpected prediction value: {prediction}")
             else:
